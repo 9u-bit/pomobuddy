@@ -34,15 +34,15 @@ public class TimerPanel extends JPanel {
         int y = (getHeight() - diameter) / 2;
 
         // Background circle
-        g2d.setColor(Color.LIGHT_GRAY);
+        g2d.setColor(new Color(255, 175, 204));
         g2d.fillOval(x, y, diameter, diameter);
 
         // Progress arc
-        g2d.setColor(Color.BLUE);
+        g2d.setColor(new Color(255, 175, 204));
         g2d.fillArc(x, y, diameter, diameter, 90, (int) (-360 * progress));
 
         // Inner white circle
-        g2d.setColor(Color.WHITE);
+        g2d.setColor(new Color(189, 224, 254));
         g2d.fillOval(x + 20, y + 20, diameter - 40, diameter - 40);
 
         // Remaining time
@@ -50,7 +50,7 @@ public class TimerPanel extends JPanel {
         int remainingMinutes = remainingSeconds / 60;
         int remainingSecs = remainingSeconds % 60;
 
-        g2d.setColor(Color.BLACK);
+        g2d.setColor(Color.WHITE);
         g2d.setFont(new Font("Arial", Font.BOLD, 20));
         g2d.drawString(
             String.format("%02d:%02d", remainingMinutes, remainingSecs),
